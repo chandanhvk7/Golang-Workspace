@@ -1,0 +1,37 @@
+GET /
+Host: 0.0.0.0:7777
+Accept: text/html
+
+###
+GET /api/customers
+Host: 0.0.0.0:7777
+Accept: application/json
+
+###
+GET /api/customers/1
+Host: 0.0.0.0:7777
+Accept: application/json
+
+###
+POST /api/customers
+Host: localhost:7777
+Accept: application/json
+Content-Type: application/json
+
+{ 
+    "name":"Vishnu P",
+    "city":"Kochi",
+    "email":"vishnu@v.com"
+}
+
+###
+PUT /api/customers/5
+Host: localhost:7777
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name":"Chandan H V",
+    "city":"Shimoga",
+    "email":"chand@n.com"
+}

@@ -1,0 +1,8 @@
+{
+    "driver": "mysql",
+    "user": "root",
+    "password": "Welcome#123",
+    "hostname": "localhost",
+    "port": "3306",
+    "database": "customersdb"
+}

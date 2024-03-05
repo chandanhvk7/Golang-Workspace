@@ -1,0 +1,18 @@
+FROM golang:alpine as stage1
+WORKDIR /chvk/app
+COPY ./go.mod ./
+COPY ./go.sum ./
+RUN go mod download
+COPY . .
+RUN go build -o main .
+
+#Stage 2
+FROM alpine
+WORKDIR /chvk/app
+COPY config.json .
+COPY --from=stage1 /chvk/app/main .
+EXPOSE 7777
+CMD [ "/vinod/app/main" ]
+
+# docker build -t customer-api:latest .
+#docker run -dp 7777:7777 --name customer-service --link mysql8server -e DB_HOST=mysql*server -e DB_PASSWORD=Welcome#123 customer-api:latest 
